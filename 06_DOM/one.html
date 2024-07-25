@@ -1,0 +1,127 @@
+<!--/*The Document Object Model (DOM) is a programming interface for web documents.
+ It represents the structure of a webpage as a tree of objects, where each element
+  (such as headings, paragraphs, and images) is a node in the tree. With the DOM, 
+  you can use JavaScript to access, modify, add, or delete elements and content on a 
+  webpage dynamically. This allows developers to create interactive and responsive web 
+  applications by changing the document's structure, style, and content in real-time without 
+  needing to reload the page.
+
+*/
+
+In the browser's console:
+
+1. `console.log(window)` displays the `window` object.
+2. `console.log(window.document)` or `console.log(document)` provides details about the document, such as the DOCTYPE, html element, head, and body.
+3. `console.dir(document)` reveals additional hidden information about the document.
+4. For example, `console.log(document.links[2])` accesses the second link on the webpage. Note that `links` is an HTMLCollection, not an array.
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Dom LEarning</title>
+    <style>
+        .bg-black{
+            background-color: #212121;
+            color: #fff;
+        }
+    </style>
+</head>
+<body class="bg-black">
+    <div >
+        <h1 id="title" class="heading">Dom Learning On yt <span style="display: none;">test text</span></h1>
+        <h2>Quia fugiat nostrum aperiam explicabo?</h2>
+        <h2>Eos harum voluptate explicabo quod.</h2>
+        <h2>Sit explicabo officia minima voluptatibus.</h2>
+
+
+    <p>Lorem   Illum, nulla.</p>
+    <input type="password">
+    <ul>
+        <li>one</li>
+        <li>two</li>
+        <li>three</li>
+    </ul>
+    </div>
+</body>
+</html>
+
+
+<!--(1) getElementById(): document.getElementById('title') targets the <h1> element with the specified ID.
+    (i)document.getElementById('title').id and document.getElementById('title').className, gives id and 
+        class value of that targeted element.
+    (iii) document.getElementById('title').setAttribute('class', 'head') overwrites the previous 
+        attribute value.
+
+    (iv)document.getElementById('title').setAttribute('class', 'head heading') sets the 
+    class attribute of the targeted element to both "head" and "heading".
+    (v)`const title = document.getElementById('title')` stores the targeted element in a variable.
+    (vi) `title.style.backgroundColor = "green"; title.style.padding = "10px"; title.style.borderRadius = "15px";` sets the background color, padding, and 
+        border radius styles on the `<h1>` element. 
+
+************************************************************************************************************************************************************************************************
+
+(2)
+    (i) title.innerText, shows actual visible text.
+    (ii) `title.textContent` shows the visible text content, including the text inside any `<span>` elements.
+    (iii)`title.innerHTML` shows the text inside the `<h1>` element along with any HTML tags, such as `<span></span>`.
+
+*************************************************************************************************************************************************************************************************
+
+(3)QuerySelector
+
+    (i)document.querySelector('h1')
+    (ii)document.querySelector('#title') and document.querySelector('.heading'), selects the element with
+        these class andids.
+    (iii)document.querySelector('input[type="password"]'), selects that input element.
+    (iv)Turning that ul's first li to bg green,
+    (v) document.querySelector("ul")
+        const myul = document.querySelector("ul")
+        const turnGreen = myul.querySelector("li")
+        turnGreen.style.backroundColor = "green" 
+    (vi) turnGreen.innerText = "five", overwriting value of first li item.
+
+**************************************************************************************************************************************************************
+
+NodeList
+
+(i) document.querySelectorAll('li') returns a NodeList, which resembles an array but is not purely an array.
+(ii) const tempLiList = document.querySelectorAll('li') allows us to store the NodeList in a variable
+(iii) tempLiList[0].style.color = "green" colors the first list item green.
+(iv) The NodeList prototype includes forEach, so you can use it to iterate over each list item
+
+       tempLiList.forEach(function(li) {
+    li.style.backgroundColor = "green";
+});
+This code sets the background color of all list items to green.
+
+
+*******************************************************************************************************************
+
+
+    (2) HTML Collection :
+    (i) document.getElementsByClassName('list-item') returns an HTMLCollection, which resembles an array but is not purely an array
+    (ii)Since HTMLCollection does not have a forEach method, you need to convert it into an array:
+        const tempClassList = document.getElementsByClassName('list-item');
+const myConvertedArray = Array.from(tempClassList);
+myConvertedArray.forEach(function(l) {
+    l.style.color = "red";
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+-->
+
+
