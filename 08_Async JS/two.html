@@ -1,0 +1,30 @@
+<!--for understanding How Async Programs work via diagram show this video "https://youtu.be/zgt5oTD3rRc?si=77vqGhxSFxAXgDd9"  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <h1>INDIA</h1>
+    <button id="stop">Stop</button>
+</h1>
+
+<script>
+
+    const change = function(){document.querySelector('h1').innerHTML = "New Delhi is the capital of India";
+}
+
+    setTimeout(change, 2000)
+
+    // Add an event listener to the stop button to cancel the scheduled function
+    
+    const stopme = document.querySelector('#stop').addEventListener('click',function(){
+        clearTimeout(stopme);
+        console.log("Done.It is stopped");
+    })
+</script>
+</body>
+</html>

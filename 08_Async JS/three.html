@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Interval</title>
+</head>
+<body style="background-color: rgba(0, 0, 0, 0.19)">
+    <h1>Hlw,I`m Sourav Giri</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+
+    // //  function(str){
+    // //     console.log(str ,Date.now());
+    // // }
+    // // const interval = setInterval(saydate,1000,"hlw")
+
+    // // clearInterval(interval);
+
+
+    // //task 1:when I click start it will be start to print 
+
+
+        // Declare a global variable to store the interval ID
+        let start;
+
+        // Function to append text to the inner HTML of the h1 element
+        function addText(str) {
+            document.querySelector('h1').innerHTML += str;
+        }
+        
+        // Add an event listener to the start button to begin the interval
+        document.querySelector('#start').addEventListener('click', function() {
+            start = setInterval(addText, 1000, ' go'); // (' go') parameter passed
+        });
+
+        // Add an event listener to the stop button to clear the interval
+        document.querySelector('#stop').addEventListener('click', function() {
+            clearInterval(start);
+        });
+    
+</script>
+</html>
